@@ -1,6 +1,7 @@
 $(window).ready(function() {
     $('#header').bind('hover', function() {
         $('nav > ul').toggleClass('slideDown');
+        $('#menu_icon').toggleClass('spinOnHover');
         if($('#navigationMenu a').hasClass('slideRight')) {
             $('#navigationMenu a').removeClass('slideRight');
         }
@@ -32,7 +33,7 @@ $(window).ready(function() {
     $('.menuLink').bind('click', function() {
         window.alert('Clicked!');
     });
-    
+
     
     console.log("framwork actions loaded!");
 });
