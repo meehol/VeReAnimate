@@ -1,20 +1,4 @@
-
-
-function chooseChatPrompt(){
-		feedbackTable.style.visibility = "hidden";
-		feedbackRadio.className = 'tabInactive';
-		promptTable.style.visibility = "visible";
-		promptRadio.className = 'tabActive';
-		$('#eraseButton1').click();
-}
-
-function chooseChatFeedback(){
-		promptTable.style.visibility = "hidden";
-		promptRadio.className = 'tabInactive';
-		feedbackTable.style.visibility = "visible";
-		feedbackRadio.className = 'tabActive';
-		$('#eraseButton0').click();		
-}
+$(window).ready(function() {
 
 function compilePrompt(){
 
@@ -124,40 +108,23 @@ var feedbackTemplate_18 = '); background-attachment: scroll; background-color: t
 		}
 
 }
-
-function submitData(){
-	var chat = document.getElementsByClassName('tabActive')[0];
-	console.log(chat.id);
-	if ( chat.id == 'promptRadio' ){ compilePrompt(); }
-	else if ( chat.id == 'feedbackRadio' ){ compileFeedback(); }	
+		
+function preventDefault(e) {
+	e.preventDefault();
 }
 
-
-
-
-function loadPage(){
-		
-	function preventDefault(e) {
-    	e.preventDefault();
-	}
-
+    
+    
+    
 	$('#wrapper').bind('drop dragover', preventDefault);
 
 //Grabbing needed elements
-	var promptRadio 	= document.getElementById('promptRadio');
-	var promptTable 	= document.getElementById('promptTable');
-
-	var submitButton	= document.getElementById('submitButton0');
 
 	var outcomeTemplate = document.getElementById('outcomeTemplate');
 
 
 
 //Actions assigned to elements
-
-	promptRadio.onclick = chooseChatPrompt;
-	feedbackRadio.onclick = chooseChatFeedback;
-	submitButton.onclick = submitData;
 
 	$('#eraseButton0').bind('click', function () {
 
@@ -258,4 +225,5 @@ function loadPage(){
 
 	console.log('Engine loaded!');
 
-}
+	
+});

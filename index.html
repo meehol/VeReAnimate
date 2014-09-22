@@ -9,13 +9,22 @@
     <meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
     <meta name="Resource-type" content="Document" />
 
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"></link>
+
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/random.css"></link>
     <link rel="stylesheet" type="text/css" href="css/nav_bar.css"></link>
     <link rel="stylesheet" type="text/css" href="css/framework_styles.css"></link>
     <link rel="stylesheet" type="text/css" href="css/animations.css"></link>
+
     <link rel="stylesheet" type="text/css" href="css/section0_styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/section1_styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/section2_styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/section3_styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/section4_styles.css"></link>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"></link>
+
     <!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
@@ -24,11 +33,11 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="libraries/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="libraries/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="js/framework_engine.js"></script>
-    <script type="text/javascript" src="js/section0_engine.js"></script>
+    <script type="text/javascript" src="js/variables.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -179,356 +188,16 @@
                                     <div class="content">
                                         <div class="top_block dropZones">
                                             <div class="content">
-                                            
-                                                  <style>
-                                                  #cage {
-                                                    display: inline-block;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    border: double 1px;
-                                                  }
-                                                  #draggable_parent {
-                                                    width: 590px;
-                                                    height: 440px;
-                                                    background: #ccc;
-                                                  }
-                                                  #draggable_child {
-                                                    width: 238px;
-                                                    height: 38px;
-                                                    background: #fff;
-                                                  }
-                                                  #inpat {
-                                                    width: 238px;
-                                                    height: 38px;
-                                                    background-color: transparent;
-                                                  }
-
-                                                  </style>
                                                 
-                                                    <div id="cage">
+                                                <div id="cage">
 
-                                                        <div id="draggable_parent" class="slideDown" style="left: 0px; top: 0px; width: 590px; height: 440px; z-index: 99202; display: block; visibility: visible; background-image: url(https://vemerchant.veinteractive.com/CustomerImages/432351c1/c4d7/458e/a2b3/619c1b065ea0/Sept2014_VeChat/Body.png); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;">
-
-                                                        <style>
-
-                                                    #slideDown{
-                                                        animation-name: slideExpandUp;
-                                                        -webkit-animation-name: slideExpandUp;  
-
-                                                        animation-duration: 1.6s;   
-                                                        -webkit-animation-duration: 1.6s;
-
-                                                        animation-timing-function: ease-out;    
-                                                        -webkit-animation-timing-function: ease -out;
-
-                                                        visibility: visible !important; 
-                                                    }
-
-                                                    @keyframes slideExpandUp {
-                                                        0% {
-                                                            transform: translateY(100%) scaleX(0.5);
-                                                        }
-                                                        30%{
-                                                            transform: translateY(-8%) scaleX(0.5);
-                                                        }   
-                                                        40%{
-                                                            transform: translateY(2%) scaleX(0.5);
-                                                        }
-                                                        50%{
-                                                            transform: translateY(0%) scaleX(1.1);
-                                                        }
-                                                        60%{
-                                                            transform: translateY(0%) scaleX(0.9);      
-                                                        }
-                                                        70% {
-                                                            transform: translateY(0%) scaleX(1.05);
-                                                        }           
-                                                        80%{
-                                                            transform: translateY(0%) scaleX(0.95);     
-                                                        }
-                                                        90% {
-                                                            transform: translateY(0%) scaleX(1.02);
-                                                        }   
-                                                        100%{
-                                                            transform: translateY(0%) scaleX(1);        
-                                                        }
-                                                    }
-
-                                                    @-webkit-keyframes slideExpandUp {
-                                                        0% {
-                                                            -webkit-transform: translateY(100%) scaleX(0.5);
-                                                        }
-                                                        30%{
-                                                            -webkit-transform: translateY(-8%) scaleX(0.5);
-                                                        }   
-                                                        40%{
-                                                            -webkit-transform: translateY(2%) scaleX(0.5);
-                                                        }
-                                                        50%{
-                                                            -webkit-transform: translateY(0%) scaleX(1.1);
-                                                        }
-                                                        60%{
-                                                            -webkit-transform: translateY(0%) scaleX(0.9);      
-                                                        }
-                                                        70% {
-                                                            -webkit-transform: translateY(0%) scaleX(1.05);
-                                                        }           
-                                                        80%{
-                                                            -webkit-transform: translateY(0%) scaleX(0.95);     
-                                                        }
-                                                        90% {
-                                                            -webkit-transform: translateY(0%) scaleX(1.02);
-                                                        }   
-                                                        100%{
-                                                            -webkit-transform: translateY(0%) scaleX(1);        
-                                                        }
-                                                    }
-
-                                                    #ChatFlowDiv{
-                                                        animation-name: expandOpen;
-                                                        -webkit-animation-name: expandOpen; 
-
-                                                        animation-duration: 1.2s;   
-                                                        -webkit-animation-duration: 1.2s;
-                                                        animation-delay: 0s, 2s;
-                                                          -moz-animation-delay:    0s, 2s;
-                                                          -webkit-animation-delay: 0s, 2s;
-                                                          -o-animation-delay:      0s, 2s;
-
-                                                        animation-timing-function: ease-out;    
-                                                        -webkit-animation-timing-function: ease-out;    
-
-                                                        visibility: visible !important; 
-                                                    }
-
-                                                    @keyframes expandOpen {
-                                                        0% {
-                                                            transform: scale(1.8);      
-                                                        }
-                                                        50% {
-                                                            transform: scale(0.95);
-                                                        }   
-                                                        80% {
-                                                            transform: scale(1.05);
-                                                        }
-                                                        90% {
-                                                            transform: scale(0.98);
-                                                        }   
-                                                        100% {
-                                                            transform: scale(1);
-                                                        }           
-                                                    }
-
-                                                    @-webkit-keyframes expandOpen {
-                                                        0% {
-                                                            -webkit-transform: scale(1.8);      
-                                                        }
-                                                        50% {
-                                                            -webkit-transform: scale(0.95);
-                                                        }   
-                                                        80% {
-                                                            -webkit-transform: scale(1.05);
-                                                        }
-                                                        90% {
-                                                            -webkit-transform: scale(0.98);
-                                                        }   
-                                                        100% {
-                                                            -webkit-transform: scale(1);
-                                                        }                   
-                                                    }
-
-                                                    #ChatButtonsCta{
-                                                        animation-name: pulse;
-                                                        -webkit-animation-name: pulse;  
-
-
-                                                        animation-duration: 1.0s;   
-                                                        -webkit-animation-duration: 1.0s;
-
-                                                        animation-iteration-count: infinite;
-                                                        -webkit-animation-iteration-count: infinite;
-                                                    }
-
-
-                                                    @keyframes pulse {
-                                                        0% {
-                                                            transform: scale(0.9);
-                                                            opacity: 0.7;       
-                                                        }
-                                                        50% {
-                                                            transform: scale(1);
-                                                            opacity: 1; 
-                                                        }   
-                                                        100% {
-                                                            transform: scale(0.9);
-                                                            opacity: 0.7;   
-                                                        }           
-                                                    }
-
-                                                    @-webkit-keyframes pulse {
-                                                        0% {
-                                                            -webkit-transform: scale(0.95);
-                                                            opacity: 0.7;       
-                                                        }
-                                                        50% {
-                                                            -webkit-transform: scale(1);
-                                                            opacity: 1; 
-                                                        }   
-                                                        100% {
-                                                            -webkit-transform: scale(0.95);
-                                                            opacity: 0.7;   
-                                                        }           
-                                                    }
-
-                                                    #ChatButtonsDiv{
-                                                        animation-name: slideLeft;
-                                                        -webkit-animation-name: slideLeft;  
-
-                                                        animation-duration: 1s; 
-                                                        -webkit-animation-duration: 1s;
-
-                                                        animation-timing-function: ease-in-out; 
-                                                        -webkit-animation-timing-function: ease-in-out;     
-
-                                                        visibility: visible !important; 
-                                                    }
-
-                                                    @keyframes slideLeft {
-                                                        0% {
-                                                            transform: translateX(150%);
-                                                        }
-                                                        50%{
-                                                            transform: translateX(-8%);
-                                                        }
-                                                        65%{
-                                                            transform: translateX(4%);
-                                                        }
-                                                        80%{
-                                                            transform: translateX(-4%);
-                                                        }
-                                                        95%{
-                                                            transform: translateX(2%);
-                                                        }           
-                                                        100% {
-                                                            transform: translateX(0%);
-                                                        }
-                                                    }
-
-                                                    @-webkit-keyframes slideLeft {
-                                                        0% {
-                                                            -webkit-transform: translateX(150%);
-                                                        }
-                                                        50%{
-                                                            -webkit-transform: translateX(-8%);
-                                                        }
-                                                        65%{
-                                                            -webkit-transform: translateX(4%);
-                                                        }
-                                                        80%{
-                                                            -webkit-transform: translateX(-4%);
-                                                        }
-                                                        95%{
-                                                            -webkit-transform: translateX(2%);
-                                                        }           
-                                                        100% {
-                                                            -webkit-transform: translateX(0%);
-                                                        }
-                                                    }
-
-                                                    #WindowCloseBtn{
-                                                        -webkit-transition-duration: 0.8s;
-                                                        -moz-transition-duration: 0.8s;
-                                                        -o-transition-duration: 0.8s;
-                                                        transition-duration: 0.8s;
-
-                                                        -webkit-transition-property: -webkit-transform;
-                                                        -moz-transition-property: -moz-transform;
-                                                        -o-transition-property: -o-transform;
-                                                        transition-property: transform;
-
-                                                        overflow:hidden;
-
-                                                        }  
-
-                                                    #WindowCloseBtn:hover  
-                                                    {
-                                                        -webkit-transform: rotate(360deg) scale(1.8) translateZ(0);
-                                                        -moz-transform: rotate(360deg) scale(1.8) translateZ(0);
-                                                        -o-transform: rotate(360deg) scale(1.8) translateZ(0);
-                                                    }
-
-                                                        </style>
-                                                        <div id="draggable_child">
-
-
-
-                                                        </div>
-                                                        <div id="inpat">
-                                                                  <p>Thank You for visiting Crief hydro!</p>
-                                                                  <p>We are pleased to se You go!</p>
-                                                        </div>
-                                                      </div>
+                                                    <div id="draggable_parent" class="slideDown" style="left: 0px; top: 0px; width: 590px; height: 440px; z-index: 99202; display: block; visibility: visible; background-image: url(https://vemerchant.veinteractive.com/CustomerImages/432351c1/c4d7/458e/a2b3/619c1b065ea0/Sept2014_VeChat/Body.png); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;">
+                                                        <div id="draggable_child"></div>
+                                                        <div id="inpat" style="border: dashed 1px; border-color: #BABABA;"></div>
                                                     </div>
-                                                    <script>
 
-                                                    $( "#draggable_parent" ).bind('dragstart', function() { 
-                                                      $( "#draggable_parent" ).css( "border", "dashed 1px" );
-                                                      $( "#draggable_parent" ).css( "border-color", "red" );
-                                                    });
-                                                    $( "#draggable_parent" ).bind('dragstop', function() { 
-                                                      $( "#draggable_parent" ).css( "border", "none" );
-                                                    });
-                                                    $( "#draggable_child" ).bind('dragstart', function() { 
-                                                      $( "#draggable_child" ).css( "border", "dashed 1px" );
-                                                      $( "#draggable_child" ).css( "border-color", "red" );
-                                                    });
-                                                    $( "#draggable_child" ).bind('dragstop', function() { 
-                                                      $( "#draggable_child" ).css( "border", "none" );
-                                                    });
-                                                    $( "#inpat" ).bind('dragstart', function() { 
-                                                      $( "#inpat" ).css( "border", "dashed 1px" );
-                                                      $( "#inpat" ).css( "border-color", "red" );
-                                                    });
-                                                    $( "#inpat" ).bind('dragstop', function() { 
-                                                      $( "#inpat" ).css( "border", "none" );
-                                                    });
-
-                                                    $( "#draggable_parent" ).css( "border-color", "red" );
-                                                    $( "#draggable_parent" ).draggable();
-                                                    $( "#draggable_parent" ).draggable({ containment: "#cage" });
-                                                    $("#draggable_parent").draggable({
-                                                      drag: function(event, ui) {
-                                                        console.log(ui.position.top, ui.position.left);
-                                                      }
-                                                    });
-
-                                                    $( "#draggable_child" ).draggable();
-                                                    $( "#draggable_child" ).draggable({ containment: "#draggable_parent" });
-                                                    $("#draggable_child").draggable({
-                                                      drag: function(event, ui) {
-                                                        console.log(ui.position.top, ui.position.left);
-                                                      }
-                                                    });
-
-                                                    $( "#inpat" ).draggable();
-                                                    $( "#inpat" ).draggable({ containment: "#draggable_parent" });
-                                                    $("#inpat").draggable({
-                                                      drag: function(event, ui) {
-                                                        console.log(ui.position.top, ui.position.left);
-                                                      }
-                                                    });
-
-
-                                                    $('#inpat').resizable();
-                                                    $('#inpat').resizable({ autoHide: true });
-                                                    $( "#inpat" ).resizable({ containment: "#draggable_parent" });
-                                                    $('#inpat').resizable({
-                                                            resize: function(event, ui) {
-                                                              console.log('Size: ' + ui.size);
-                                                            },
-                                                        });
-                                                    </script>                                                
-                                            
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -638,6 +307,12 @@
     </div>
 
     <script type="text/javascript" src="js/framework_actions.js"></script>
+    <script type="text/javascript" src="js/framework_engine.js"></script>
+    <script type="text/javascript" src="js/section0_engine.js"></script>
+    <script type="text/javascript" src="js/section1_engine.js"></script>
+    <script type="text/javascript" src="js/section2_engine.js"></script>
+    <script type="text/javascript" src="js/section3_engine.js"></script>
+    <script type="text/javascript" src="js/section4_engine.js"></script>
 
 </body>
 
