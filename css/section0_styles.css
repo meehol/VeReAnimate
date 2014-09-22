@@ -1,0 +1,11 @@
+label {
+    display:block;
+}
+
+input {
+    border:solid 1px #888;
+    font-size:20px;
+    border-radius:5px;
+    padding:2px;
+    outline:none;
+}

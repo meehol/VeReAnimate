@@ -141,15 +141,13 @@ function loadPage(){
     	e.preventDefault();
 	}
 
-	$(document).bind('drop dragover', preventDefault);
+	$('#wrapper').bind('drop dragover', preventDefault);
 
 //Grabbing needed elements
 	var promptRadio 	= document.getElementById('promptRadio');
-	var feedbackRadio	= document.getElementById('feedbackRadio');
 	var promptTable 	= document.getElementById('promptTable');
-	var feedbackTable 	= document.getElementById('feedbackTable');
 
-	var submitButton	= document.getElementById('submitButton');
+	var submitButton	= document.getElementById('submitButton0');
 
 	var outcomeTemplate = document.getElementById('outcomeTemplate');
 
@@ -177,30 +175,6 @@ function loadPage(){
 	    $('#bgSlice0sizePreview').text('');
 	    $('#closeSlice0sizePreview').text('');
 	    $('#ctaSlice0sizePreview').text('');
-
-	    console.log('Erased!');
-	});
-
-	$('#eraseButton1').bind('click', function () {
-
-		$('#bgSlice1Preview').text('');
-	    $('#closeSlice1Preview').text('');
-	    $('#ctaSubmitSlice1Preview').text('');
-	    $('#ctaSlice1Preview').text('');
-
-	    $('#bgSlice1').val('');
-	    $('#bgSlice1').css("backgroundColor", "white");
-	    $('#closeSlice1').val('');
-	    $('#closeSlice1').css("backgroundColor", "white");
-	    $('#ctaSubmitSlice1').val('');
-	    $('#ctaSubmitSlice1').css("backgroundColor", "white");
-	    $('#ctaSlice1').val('');
-	    $('#ctaSlice1').css("backgroundColor", "white");
-
-	    $('#bgSlice1sizePreview').text('');
-	    $('#closeSlice1sizePreview').text('');
-	    $('#ctaSubmitSlice1sizePreview').text('');
-	    $('#ctaSlice1sizePreview').text('');
 
 	    console.log('Erased!');
 	});
@@ -281,118 +255,6 @@ function loadPage(){
 	$('#ctaSlice0').bind('click', function(event){
 	    $(this).blur();
 	});
-
-
-//FEEDBACK ACTIONS
-
-	$('#bgSlice1').bind('drop', function(event){
-		bgURL1 = event.originalEvent.dataTransfer.getData("URL");
-		bgImg1 = new Image();
-		bgImg1.onload = function(){
-			console.log('Image width: ' + bgImg1.width + 'px; Image height: ' + bgImg1.height + 'px;');
-	    	$('#bgSlice1sizePreview').text(bgImg1.width+'x'+bgImg1.height);
-		};
-		bgImg1.src = bgURL1;
-
-		var bgElem1 = document.createElement('a');
-		bgElem1.href = bgURL1;
-		bgElem1.protocol = 'https:';
-		bgURL1 = bgElem1.href;
-
-	    $('#bgSlice1Preview').text(bgURL1);
-
-	    $(this).css('background-color','green');
-	    $(this).blur();
-		console.log('BG dropped!');	    
-	});
-
-	$('#closeSlice1').bind('drop', function(event){
-		closeURL1 = event.originalEvent.dataTransfer.getData("URL");
-		closeImg1 = new Image();
-		closeImg1.onload = function(){
-			console.log('Image width: ' + closeImg1.width + 'px; Image height: ' + closeImg1.height + 'px;');
-	    	$('#closeSlice1sizePreview').text(closeImg1.width+'x'+closeImg1.height);
-		};
-		closeImg1.src = closeURL1;
-
-		var closeElem1 = document.createElement('a');
-		closeElem1.href = closeURL1;
-		closeElem1.protocol = 'https:';
-		closeURL1 = closeElem1.href;
-
-	    $('#closeSlice1Preview').text(closeURL1);
-
-	    $(this).css('background-color','green');
-	    $(this).blur();
-		console.log('close dropped!');	  	    
-	});
-
-	$('#ctaSubmitSlice1').bind('drop', function(event){
-		ctaSubmitURL1 = event.originalEvent.dataTransfer.getData("URL");
-		ctaSubmitImg1 = new Image();
-		ctaSubmitImg1.onload = function(){
-			console.log('Image width: ' + ctaSubmitImg1.width + 'px; Image height: ' + ctaSubmitImg1.height + 'px;');
-	    	$('#ctaSubmitSlice1sizePreview').text(ctaSubmitImg1.width+'x'+ctaSubmitImg1.height);
-		};
-		ctaSubmitImg1.src = ctaSubmitURL1;
-
-		var ctaSubmitElem1 = document.createElement('a');
-		ctaSubmitElem1.href = ctaSubmitURL1;
-		ctaSubmitElem1.protocol = 'https:';
-		ctaSubmitURL1 = ctaSubmitElem1.href;
-
-	    $('#ctaSubmitSlice1Preview').text(ctaSubmitURL1);
-
-	    $(this).css('background-color','green');
-	    $(this).blur();
-		console.log('CTASubmit dropped!');	      
-	});
-
-	$('#ctaSlice1').bind('drop', function(event){
-		ctaURL1 = event.originalEvent.dataTransfer.getData("URL");
-		ctaImg1 = new Image();
-		ctaImg1.onload = function(){
-			console.log('Image width: ' + ctaImg1.width + 'px; Image height: ' + ctaImg1.height + 'px;');
-	    	$('#ctaSlice1sizePreview').text(ctaImg1.width+'x'+ctaImg1.height);
-		};
-		ctaImg1.src = ctaURL1;
-
-		var ctaElem1 = document.createElement('a');
-		ctaElem1.href = ctaURL1;
-		ctaElem1.protocol = 'https:';
-		ctaURL1 = ctaElem1.href;
-
-	    $('#ctaSlice1Preview').text(ctaURL1);
-
-	    $(this).css('background-color','green');
-	    $(this).blur();
-		console.log('CTA dropped!');	      
-	});
-
-	$('#bgSlice1').bind('click', function(event){
-	    $(this).blur();
-	});
-
-	$('#closeSlice1').bind('click', function(event){
-	    $(this).blur();
-	});
-
-	$('#ctaSlice1').bind('click', function(event){
-	    $(this).blur();
-	});
-
-
-
-
-//Definition of template parts
-
-
-
-//PROMPT TEMPLATE
-
-
-
-//FEEDBACK TEMPLATE
 
 	console.log('Engine loaded!');
 
