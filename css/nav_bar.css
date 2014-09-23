@@ -71,6 +71,7 @@
 /* General hover styles */
 
 #navigationMenu li div a{ width:auto; padding:0 20px;overflow:visible; left:43px;}
+
 #navigationMenu div:hover{
     text-decoration:none;
 

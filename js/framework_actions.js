@@ -1,4 +1,18 @@
 $(window).ready(function() {
+    
+    $(function() {
+        setTimeout(function(){
+        	$('#start-screen img').first().addClass('animated rollOut');
+              	setTimeout(function(){
+    			$('#start-screen img').last().addClass('animated fadeOut');
+                    setTimeout(function(){
+                		$('#start-screen').remove();
+                    }, 1100);
+                }, 700);
+       	}, 1300);
+        
+	});
+    
     $('#header').bind('hover', function() {
         $('nav > ul').toggleClass('slideDown');
         $('#menu_icon').toggleClass('spinItem');
@@ -49,6 +63,7 @@ $(window).ready(function() {
         $('a.active').parent().prev('li').children('a').click();
     	$('#module_wrapper').addClass('slideExpandUp');
     });
+    
     
     console.log("framwork actions loaded!");
 });

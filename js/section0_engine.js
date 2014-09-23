@@ -108,15 +108,7 @@ var feedbackTemplate_18 = '); background-attachment: scroll; background-color: t
 		}
 
 }
-		
-function preventDefault(e) {
-	e.preventDefault();
-}
 
-    
-    
-    
-	$('#wrapper').bind('drop dragover', preventDefault);
 
 //Grabbing needed elements
 
@@ -124,8 +116,45 @@ function preventDefault(e) {
 
 
 
-//Actions assigned to elements
+//ONLOAD ACTIONS============================================
+//
+//
+//
 
+	/*SECTION 0*/
+    
+    /*prompt*/
+    var bgURL ;
+    var bgWidth ;
+    var bgHeight ;
+    var closeURL;
+    var closeWidth ;
+    var closeHeight;
+    var ctaURL ;
+    var ctaWidth ;
+    var ctaHeight 	;
+    
+	/*feedback*/
+    var bgURL1 			;
+    var bgWidth1 		;
+    var bgHeight1 		;
+    var closeURL1 		;
+    var closeWidth1 	;
+    var closeHeight1 	;
+    var ctaURL1 		;
+    var ctaWidth1 		;
+    var ctaHeight1 		;
+    var ctaSubmitURL1 	;
+    var ctaSubmitWidth1 ;
+    var ctaSubmitHeight1;
+    
+    
+    function preventDefault(e) {
+    	e.preventDefault();
+	}
+
+	$('div.module_content').bind('drop dragover', preventDefault);
+    
 	$('#eraseButton0').bind('click', function () {
 
 	    $('#bgSlice0Preview').text('');
@@ -155,14 +184,17 @@ function preventDefault(e) {
 			console.log('Image width: ' + bgImg.width + 'px; Image height: ' + bgImg.height + 'px;');
 	    	$('#bgSlice0sizePreview').text(bgImg.width+'x'+bgImg.height);
 		};
-		bgImg.src = bgURL;
-
+		bgURL = bgImg.src;
+		bgWidth = bgImg.width;
+        bgHeight = bgImg.height;
+        
 		var bgElem = document.createElement('a');
 		bgElem.href = bgURL;
 		bgElem.protocol = 'https:';
 		bgURL = bgElem.href;
 
-	    $('#bgSlice0Preview').text(bgURL);
+        console.log('W: '+bgWidth+'H: '+bgHeight);
+	    $('#bgSlice0Preview').html(bgURL);
 
 	    $(this).css('background-color','green');
 	    $(this).blur();
@@ -177,11 +209,14 @@ function preventDefault(e) {
 	    	$('#closeSlice0sizePreview').text(closeImg.width+'x'+closeImg.height);
 		};
 		closeImg.src = closeURL;
-
+		closeImg.width = closeWidth;
+        closeImg.height = closeHeight;
+        
 		var closeElem = document.createElement('a');
 		closeElem.href = closeURL;
 		closeElem.protocol = 'https:';
 		closeURL = closeElem.href;
+
 
 	    $('#closeSlice0Preview').text(closeURL);
 
@@ -198,7 +233,9 @@ function preventDefault(e) {
 	    	$('#ctaSlice0sizePreview').text(ctaImg.width+'x'+ctaImg.height);
 		};
 		ctaImg.src = ctaURL;
-
+		ctaImg.width = ctaWidth;
+        ctaImg.height = ctaHeight;
+        
 		var ctaElem = document.createElement('a');
 		ctaElem.href = ctaURL;
 		ctaElem.protocol = 'https:';

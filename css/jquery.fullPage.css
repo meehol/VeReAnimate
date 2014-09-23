@@ -159,6 +159,7 @@ html, body {
     position: absolute;
     z-index: 1;
 }
+#fp-nav span img{vertical-align: top; left:0px}
 .fp-tooltip {
     position: absolute;
     top: 2px;
