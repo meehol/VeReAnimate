@@ -1,15 +1,19 @@
 $(window).ready(function() {
     
+    
+    
     $(function() {
+       
         setTimeout(function(){
-        	$('#start-screen img').first().addClass('animated rollOut');
+            $('#start-screen img').removeClass('flipInX');
+        	$('#start-screen img').addClass('animated fadeOutUp');
               	setTimeout(function(){
-    			$('#start-screen img').last().addClass('animated fadeOut');
+    			$('#start-screen').last().addClass('animated fadeOut');
                     setTimeout(function(){
                 		$('#start-screen').remove();
                     }, 1100);
                 }, 700);
-       	}, 1300);
+       	}, 2000);
         
 	});
     

@@ -106,7 +106,6 @@
           animation-name: flash;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes pulse {
   0% {
@@ -1643,7 +1642,7 @@
   }
 }
 
-.animated.flip {
+.flip {
   -webkit-backface-visibility: visible;
           backface-visibility: visible;
   -webkit-animation-name: flip;
@@ -1721,6 +1720,10 @@
           backface-visibility: visible !important;
   -webkit-animation-name: flipInX;
           animation-name: flipInX;
+      -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @-webkit-keyframes flipInY {
@@ -1837,8 +1840,8 @@
 .flipOutX {
   -webkit-animation-name: flipOutX;
           animation-name: flipOutX;
-  -webkit-animation-duration: .75s;
-          animation-duration: .75s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-backface-visibility: visible !important;
           backface-visibility: visible !important;
 }
@@ -2019,6 +2022,10 @@
 .rotateIn {
   -webkit-animation-name: rotateIn;
           animation-name: rotateIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;    
 }
 
 @-webkit-keyframes rotateInDownLeft {
