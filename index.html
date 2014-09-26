@@ -102,7 +102,7 @@
 
     <div id="start-screen" class="" style="position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; z-index:1001;">
 
-        <img src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 500px; top:30%; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); "></img>
+        <img src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 50%; top:50%; margin-left:-130px; margin-top:-133px; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); "></img>
         <!-- <img src="img/ve_startup.png" style="display:inline-block; float:left; width:100%;height:100%;"></img> -->
 
     </div>
@@ -133,7 +133,7 @@
                                         <div class="top_block dropZones">
                                             <div class="content" style="margin-top:5%;">
                                                 <div style="display: inline-block; width:20%;">
-                                                    <input class="button" type="button" id="eraseButton0" value="Erase!" style="width:70px;height:50px;font-size:11px;margin-top: 40px; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);">
+                                                    <input class="buttonErase" type="button" id="eraseButton0" value="Erase" style="width:70px;height:50px;">
                                                 </div>
                                                 <div style="display: inline-block; width:20%;">
                                                     <label for="bgSlice0">Background</label>
@@ -157,9 +157,9 @@
                                                     <div for="ctaSlice0Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">CTA button URL:</div>
                                                 </div>
                                                 <div style="display: table-cell; width:60%;">
-                                                    <div id="bgSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:15px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
-                                                    <div id="closeSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:15px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
-                                                    <div id="ctaSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:15px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="bgSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="closeSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="ctaSlice0Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
                                                 </div>
                                                 <div style="display: table-cell; width:20%; text-align:left;">
                                                     <div id="bgSlice0sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
@@ -207,9 +207,10 @@
 
                                                 <div id="cage">
 
-                                                    <div id="draggable_parent" class="slideDown" style="left: 0px; top: 0px; width: 590px; height: 440px; z-index: 99202; display: block; visibility: visible; background-image: url(https://vemerchant.veinteractive.com/CustomerImages/432351c1/c4d7/458e/a2b3/619c1b065ea0/Sept2014_VeChat/Body.png); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;">
-                                                        <div id="draggable_child"></div>
-                                                        <div id="inpat" style="border: dashed 1px; border-color: #BABABA;"></div>
+                                                    <div id="draggable_parent" class="slideDown" style="left: 0px; top: 0px; z-index: 99202; visibility: visible; background-color: white;">
+                                                        <div id="draggable_child_cta" style="border: dashed 1px; border-color: red;"></div>
+                                                        <div id="draggable_child_close" style="border: dashed 1px; border-color: red;"></div>
+                                                        <div id="inpat" style="border: dashed 1px; border-color: red;"></div>
                                                     </div>
 
                                                 </div>
@@ -228,7 +229,7 @@
                         <input class="buttonPreviousModule" type="button" value="Back"></input>
                     </div>
                     <div class="module_bottom_right">
-                        <input class="buttonSaveModule" type="button" value="Save"></input>
+                        <input id="submitButton1" class="buttonSaveModule" type="button" value="Save"></input>
                     </div>
                 </div>
 

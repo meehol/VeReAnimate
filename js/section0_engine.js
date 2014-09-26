@@ -1,18 +1,58 @@
 $(window).ready(function() {
+    
+
+    
+    
+function saveSlices(){
+    
+    if(bgImg.width && closeImg.width && ctaImg.width){
+    bgURL = $('#bgSlice0Preview').text();
+	bgWidth = bgImg.width;
+	bgHeight = bgImg.height;
+
+   
+	closeURL = $('#closeSlice0Preview').text();
+	closeWidth = closeImg.width;
+	closeHeight = closeImg.height;
+
+    
+	ctaURL = $('#ctaSlice0Preview').text();
+	ctaWidth = ctaImg.width;
+	ctaHeight = ctaImg.height;
+        
+    checkTheBox();
+        
+        
+    document.getElementById('draggable_parent').style.backgroundImage = 'url(' + bgURL + ')';
+    $("#draggable_parent").css('width', bgWidth );
+    $("#draggable_parent").css('height', bgHeight );
+        
+    document.getElementById('draggable_child_cta').style.backgroundImage = 'url(' + ctaURL + ')';
+    $("#draggable_child_cta").css('width', ctaWidth );
+    $("#draggable_child_cta").css('height', ctaHeight );
+        
+    document.getElementById('draggable_child_close').style.backgroundImage = 'url(' + closeURL + ')';
+    $("#draggable_child_close").css('width', closeWidth );
+    $("#draggable_child_close").css('height', closeHeight );
+    
+    }else{
+        alert('Drop all the slices!');
+    }
+}
 
 function compilePrompt(){
 
-	var bgURL = $('#bgSlice0Preview').text();
-	var bgWidth = bgImg.width;
-	var bgHeight = bgImg.height;
+    //var bgURL = $('#bgSlice0Preview').text();
+	//var bgWidth = bgImg.width;
+	//var bgHeight = bgImg.height;
 
-	var closeURL = $('#closeSlice0Preview').text();
-	var closeWidth = closeImg.width;
-	var closeHeight = closeImg.height;
+	//var closeURL = $('#closeSlice0Preview').text();
+	//var closeWidth = closeImg.width;
+	//var closeHeight = closeImg.height;
 
-	var ctaURL = $('#ctaSlice0Preview').text();
-	var ctaWidth = ctaImg.width;
-	var ctaHeight = ctaImg.height;
+	//var ctaURL = $('#ctaSlice0Preview').text();
+	//var ctaWidth = ctaImg.width;
+	//var ctaHeight = ctaImg.height;
 
 	var promptTemplate_1  = '<div id="ChatMainDiv" style="background-image: url(';
 		/*bgURL*/
@@ -51,102 +91,17 @@ function compilePrompt(){
 
 }
 
-function compileFeedback(){
-
-	var bgURL1 = $('#bgSlice1Preview').text();
-	var bgWidth1 = bgImg1.width;
-	var bgHeight1 = bgImg1.height;
-
-	var closeURL1 = $('#closeSlice1Preview').text();
-	var closeWidth1 = closeImg1.width;
-	var closeHeight1 = closeImg1.height;
-
-	var ctaSubmitURL1 = $('#ctaSubmitSlice1Preview').text();
-	var ctaSubmitWidth1 = ctaSubmitImg1.width;
-	var ctaSubmitHeight1 = ctaSubmitImg1.height;
-
-	var ctaURL1 = $('#ctaSlice1Preview').text();
-	var ctaWidth1 = ctaImg1.width;
-	var ctaHeight1 = ctaImg1.height;
-
-var feedbackTemplate_1  = '<div id="ChatMainDiv" style="position: fixed; left: 150px; top: 450px; width: ';
-/*bgWidth1*/
-var feedbackTemplate_2  = 'px; height: ';
-/*bgHeight1*/
-var feedbackTemplate_3  = 'px; z-index: 99202; display: block; visibility: visible; background-image: url(';
-/*bgURL1*/
-var feedbackTemplate_4  = '); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;">\n';
-var feedbackTemplate_5  = '<div id="ChatBackgroundDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9000;"></div>\n<div style="position: absolute; left: 0px; top: 0px; z-index: 9001;" id="ChatContentDiv">\n<div id="ChatFlowDiv" style="color: #FFFFFF; line-height: 14px; position: absolute; z-index: 9002; border-width: 0px; font-size: 12px; padding: 0px 15px; background-image: none; background-attachment: scroll; background-color: transparent; text-indent: 0px; left: 45px; top: 120px; font-family: unitweb-medium, arial, serif; font-weight: normal; overflow: auto; width: 295px; height: 175px; background-position: 0% 0%; background-repeat: repeat repeat;';
-var feedbackTemplate_6  = ' text-align: left;letter-spacing: 0px;">\n\n\n\n</div>\n<div id="ChatStatusDiv" style="visibility: hidden; display: none;"></div>\n<div id="ChatInputDiv" style="">\n<textarea id="ChatInputText" sty';
-var feedbackTemplate_7  = 'le="border: medium none; color: #FFF !important; outline: medium none; overflow: auto; position: absolute; resize: none; display: inline; vertical-align: 0px; margin: 0px;  font-family: arial,times new roman,times,serif; font-size: 9px; padding: 6px 6px 1px; line-height: 9px; width: 286px;height: 16px; left: 59px;top: 297px;background-color: rgba(0,0,0,0);box-sizing: content-box;" placeholder="Enter your comments here..."></textarea>';
-var feedbackTemplate_8  = '\n</div>\n<div id="ChatButtonsDiv" style="z-index: 9002; opacity: 1; position: absolute; left: 261px; top: 323px; width: ';
-/*ctaSubmitWidth1*/
-var feedbackTemplate_9  = 'px; height: ';
-/*ctaSubmitHeight1*/
-var feedbackTemplate_10 = 'px; cursor: pointer; background-image: url(';
-/*ctaSubmitURL1*/
-var feedbackTemplate_11 = '); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;" onmouseover="this.style.opacity = '+'0.8'+'" onmouseout="this.style.opacity = '+'1'+'"></div>\n<div style="z-index: 9002; opacity: 1; position: relative; left: 45px; top: 365px; width: ';
-/*ctaWidth1*/
-var feedbackTemplate_12 = 'px; height: ';
-/*ctaHeight1*/
-var feedbackTemplate_13 = 'px; cursor: pointer; background-image: url(';
-/*ctaURL1*/
-var feedbackTemplate_14 = '); background-attachment: scroll; background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;" onmouseover="this.style.opacity = '+'0.8'+'" onmouseout="this.style.opacity = '+'1'+'" onclick="veTagData.customEvents.onChatLinkClick('+"'ChatLinkCTA1'"+');"></div>\n';
-var feedbackTemplate_15 = '</div>\n\n<div id="WindowBarDiv" style="background-color: #d3d3d3; position: absolute; left: 4px; top: 6px; z-index: 9994; width: 574px;">\n<div id="WindowTittleDiv" style="cursor: move; margin-left: 0px; margin-right: 0px; position: absolute; top: 22px; z-index: 9995; left: 25px; height: 82px; width: 322px;"></div>\n<div id="WindowCloseBtn" style="cursor: pointer; margin-left: 0px; margin-right: 0px; position: absolute; z-index: 9998; opacity: 1; left: 540px; top: 30px; width: ';
-/*closeWidth1*/
-var feedbackTemplate_16 = 'px; height: ';
-/*closeHeight1*/
-var feedbackTemplate_17 = 'px; background-image: url(';
-/*closeURL1*/
-var feedbackTemplate_18 = '); background-attachment: scroll; background-color: transparent; background-position: 100% 50%; background-repeat: no-repeat;" onmouseover="this.style.opacity = '+'0.8'+'" onmouseout="this.style.opacity = '+'1'+'"></div>\n</div>\n</div>';
-
-
-	document.getElementById('outcomeTemplate').innerHTML = feedbackTemplate_1 + bgWidth1 + feedbackTemplate_2 + bgHeight1 + feedbackTemplate_3 + bgURL1 + feedbackTemplate_4 + feedbackTemplate_5 + feedbackTemplate_6 + feedbackTemplate_7 + feedbackTemplate_8 + ctaSubmitWidth1 + feedbackTemplate_9 + ctaSubmitHeight1 + feedbackTemplate_10 + ctaSubmitURL1 + feedbackTemplate_11 + ctaWidth1 + feedbackTemplate_12 + ctaHeight1 + feedbackTemplate_13 + ctaURL1 + feedbackTemplate_14 + feedbackTemplate_15 + closeWidth1 + feedbackTemplate_16 + closeHeight1 + feedbackTemplate_17 + closeURL1 + feedbackTemplate_18 ;
-
-	document.getElementById('WindowCloseBtn').onclick = function(){
-			document.getElementById('ChatMainDiv').style.visibility = 'hidden';
-		}
-
-}
-
 
 //Grabbing needed elements
 
 	var outcomeTemplate = document.getElementById('outcomeTemplate');
-
+    $('#submitButton0').click( saveSlices );
 
 
 //ONLOAD ACTIONS============================================
 //
 //
 //
-
-	/*SECTION 0*/
-    
-    /*prompt*/
-    var bgURL ;
-    var bgWidth ;
-    var bgHeight ;
-    var closeURL;
-    var closeWidth ;
-    var closeHeight;
-    var ctaURL ;
-    var ctaWidth ;
-    var ctaHeight 	;
-    
-	/*feedback*/
-    var bgURL1 			;
-    var bgWidth1 		;
-    var bgHeight1 		;
-    var closeURL1 		;
-    var closeWidth1 	;
-    var closeHeight1 	;
-    var ctaURL1 		;
-    var ctaWidth1 		;
-    var ctaHeight1 		;
-    var ctaSubmitURL1 	;
-    var ctaSubmitWidth1 ;
-    var ctaSubmitHeight1;
     
     
     function preventDefault(e) {
@@ -179,22 +134,19 @@ var feedbackTemplate_18 = '); background-attachment: scroll; background-color: t
 
 	$('#bgSlice0').bind('drop', function(event){
 		bgURL = event.originalEvent.dataTransfer.getData("URL");
-		bgImg = new Image();
+		
 		bgImg.onload = function(){
 			console.log('Image width: ' + bgImg.width + 'px; Image height: ' + bgImg.height + 'px;');
 	    	$('#bgSlice0sizePreview').text(bgImg.width+'x'+bgImg.height);
 		};
-		bgURL = bgImg.src;
-		bgWidth = bgImg.width;
-        bgHeight = bgImg.height;
-        
+		bgImg.src = bgURL;
+
 		var bgElem = document.createElement('a');
 		bgElem.href = bgURL;
 		bgElem.protocol = 'https:';
 		bgURL = bgElem.href;
 
-        console.log('W: '+bgWidth+'H: '+bgHeight);
-	    $('#bgSlice0Preview').html(bgURL);
+	    $('#bgSlice0Preview').text(bgURL);
 
 	    $(this).css('background-color','green');
 	    $(this).blur();
@@ -203,20 +155,17 @@ var feedbackTemplate_18 = '); background-attachment: scroll; background-color: t
 
 	$('#closeSlice0').bind('drop', function(event){
 		closeURL = event.originalEvent.dataTransfer.getData("URL");
-		closeImg = new Image();
+		
 		closeImg.onload = function(){
 			console.log('Image width: ' + closeImg.width + 'px; Image height: ' + closeImg.height + 'px;');
 	    	$('#closeSlice0sizePreview').text(closeImg.width+'x'+closeImg.height);
 		};
 		closeImg.src = closeURL;
-		closeImg.width = closeWidth;
-        closeImg.height = closeHeight;
-        
+
 		var closeElem = document.createElement('a');
 		closeElem.href = closeURL;
 		closeElem.protocol = 'https:';
 		closeURL = closeElem.href;
-
 
 	    $('#closeSlice0Preview').text(closeURL);
 
@@ -227,15 +176,13 @@ var feedbackTemplate_18 = '); background-attachment: scroll; background-color: t
 
 	$('#ctaSlice0').bind('drop', function(event){
 		ctaURL = event.originalEvent.dataTransfer.getData("URL");
-		ctaImg = new Image();
+		
 		ctaImg.onload = function(){
 			console.log('Image width: ' + ctaImg.width + 'px; Image height: ' + ctaImg.height + 'px;');
 	    	$('#ctaSlice0sizePreview').text(ctaImg.width+'x'+ctaImg.height);
 		};
 		ctaImg.src = ctaURL;
-		ctaImg.width = ctaWidth;
-        ctaImg.height = ctaHeight;
-        
+
 		var ctaElem = document.createElement('a');
 		ctaElem.href = ctaURL;
 		ctaElem.protocol = 'https:';

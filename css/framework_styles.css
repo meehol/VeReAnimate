@@ -9,6 +9,15 @@ background-size:80px 140px;
 background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
+#section0,
+#section1,
+#section2,
+#section3,
+#section4{
+    padding-left:50px !important;
+    padding-right:100px !important;
+}
+    
 nav {
 	position: relative;
 }
@@ -124,7 +133,7 @@ nav{
     width: 100%;
     margin-bottom: 10px;
     
-        vertical-align: middle;
+    vertical-align: middle;
     text-align: center;
     
     background: #EBEBE0;

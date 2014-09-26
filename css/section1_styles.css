@@ -2,20 +2,18 @@
     display: inline-block;
     width: auto;
     height: auto;
-    border: dotted 1px;
-    margin-top: 30px;
+    border: dashed 2px;
+    margin-top: 5x;
+    padding: 10x;
 }
 
 #draggable_parent {
-    width: auto;
-    height: auto;
-    background: transparent;
+        background-color: lightgreen !important;
 }
 
-#draggable_child {
-    width: 238px;
-    height: 38px;
-    background: #BABABA;
+#draggable_child_cta,
+#draggable_child_close,{
+    background: transparent;
 }
 
 #inpat {
