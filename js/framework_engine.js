@@ -14,6 +14,10 @@
     var closeImg = new Image();
     var ctaImg = new Image();
 
+  // knowledge specific variables
+  var firstResponse, unknownResponse, knowledgeEndW, knowledgeEndH,
+    knowledgeEndT, knowledgeEndL;
+
     function checkTheBox() {
         $('a.active').css('pointer-events','auto');
         $('a.active span').css('background-color','#26FF00');

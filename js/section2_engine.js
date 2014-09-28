@@ -1,4 +1,4 @@
-(function(global, $, _) {
+$(window).ready(function() {
   'use strict';
 	// Style Guide
 	// All jQuery objects are prefixed with `$`
@@ -46,12 +46,34 @@
 		url: "",
 		clickref: "Link",
 		onclickOverride: null,
-	};
+	}, 
+      
+  knowledgeStyles = {
+    position: 'absolute',
+    'z-index': 9002,
+    color: '#000000',
+    'line-height': '15px',
+    'font-size': 13,
+    'font-family': 'arial,times new roman,times,serif',
+    'font-weight': 'normal',
+    'text-align': 'left',
+    'padding-top': 10,
+    'padding-bottom': 10,
+    'padding-right': 15,
+    'background-image': 'none',
+    'background-repeat': 'repeat',
+    'background-attachment': 'scroll',
+    'background-position': '0% 0%',
+    'background-color':'transparent',
+    'text-indent': 0,
+    'overflow-x': 'hidden',
+    'overflow-y': 'hidden',
+    'box-sizing': 'border-box',
+  };
 
-	$.fn.vePersonality = function (userOptions) {
+	$.fn.veKnowledge = function (userOptions) {
 
 		var $editor = this,
-				options,
         selectedRange,
         toolbarBtnSelector = 'button[data-edit]',
         $textButtons,
@@ -62,6 +84,10 @@
             document.execCommand('styleWithCSS', null, true); // make sure that
             // contenteditable regions use styles not html markup.
           }
+        },
+        
+        dasherize =  function(str) {
+          return str.trim().replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').toLowerCase();
         },
 
         execCommand = function (commandWithArgs, valueArg) {
@@ -78,9 +104,11 @@
             return sel.getRangeAt(0);
           }
         },
+        
         saveSelection = function () {
           selectedRange = getCurrentRange();
         },
+        
         restoreSelection = function () {
           var selection = window.getSelection();
           if (selectedRange) {
@@ -95,25 +123,59 @@
           }
         },
 
-        atagHtml = function(styles) {
-          var atagString = '<div class="btn-group'
-        }
+       atagHtml = function(styles) {
+          var atagString = '<div class="btn-group dropup" id="atag-button"><button type="button" class="btn btn-default">Dropup</button><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu" id="atag-styles" role="menu"><!-- Dropdown menu links --></ul></div>';
+          
+        },
+        
+        ptagHtml = function() {
+          var ptagString = '<div class="btn-group dropup" id="ptag-button"><button type="button" class="btn btn-default">ptag</button><button type="button" class="btn btn-default dropdown-toggle" id=data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu" id="ptag-styles" role="menu"><!-- Dropdown menu links --></ul></div>',
+              styleString = '<li><div class="container"><div class="row"><div class="col-xs-6"><input type="text" value="<%= styleName %>" class="form-control" placeholder="Style Name"></div><div class="col-xs-6"><input type="text" value="<%= styleValue %>" class="form-control" placeholder="Style Value"></div></div></li>',
+              outputStyleString = '', 
+              $ptag = $(ptagString);
+          _(styles).forEach(function(val, key, obj) {
+            var data = {styleName: key, styleValue: val};
+            outputString += _.template(styleString, data);
+          });
+          
+          $ptag.find().click(function(event){});
+          $ptag.find('#ptag-styles').html(outputString);
+          return $ptag;
+          
+          
+        },
+        
+        // determine the current styles on the tag selected.  
+        grabStyles = function() {
+          var el = document.createElement('div'),
+          initialStyle, key;
 
-        ptagHtml = function(styles) {
-          var ptagString = '<div class="btn-group dropup"><button type="button" class="btn btn-default">Dropup</button><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu" id="p-tag-styles" role="menu"><!-- Dropdown menu links --></ul></div>';
-          var styleString = '<div class="row"><div class="col-xs-6"><input type="text" value="<%= styleName %>" class="form-control" placeholder="Style Name"></div><div class="col-xs-6"><input type="text" value="<%= styleValue %>" class="form-control" placeholder="Style Value"></div>';
-
-  				var outputStyleString = '';
-
-
-
-
+          el.style.fontSize = '20px';
+          initialStyle = el.style;
+          var dasherizedStyle = {};
+          for (key in initialStyle) {
+          //     console.log(parseInt(key));
+              if(initialStyle[key] && (key !== 'cssText') && (key !== 'length') && (typeof initialStyle[key] !== 'function') && (parseInt(key, 10) !== parseInt(key, 10))) {
+                  dasherizedStyle[dasherize(key).replace('webkit', '-webkit')] = initialStyle[key];
+              }
+          }
+          return dasherizedStyle;
+          
+        },
+        
+        // used to check what should appear in the drop down when clicking 
+        determineTagStyle = function(tag) {
+          $parent = $(selectedRange.commonAncestorContainer.parentNode); // check the common parent
+          if(($parent).is(tag)) {
+            return grabStyle($parent);
+          } else {
+            return (tag === 'a') ? aDefaults.style : pDefaults.style;
+          }
         },
 
         textEditHtml = function () {
           var htmlString = '<button class="btn btn-default" data-edit="<%= command %>" title="" data-original-title="<%= desc %>"><i class="fa fa-<%= icon %>"></i></a>',
-
-          var outputString = '';
+              outputString = '';
           _.forEach(buttonGroups.text, function(val, key){
             var data = {command: key, desc: val.desc, icon: val.icon};
             outputString += _.template(htmlString, data);
@@ -148,6 +210,8 @@
             // Create the toolbar that is slightly above the editor touch point.
             $toolbar = $(toolbarHtml).css({zIndex: 100000, position: 'absolute'});
             var $textButtons = createButtonGroup(textEditHtml());
+//                 $ptagButton = create
+            
             // set up text buttons.
             $toolbar.append($textButtons);
             document.body.appendChild($toolbar[0]);
@@ -168,12 +232,17 @@
           });
 
 
-          bindToolbar($toolbar)
+          bindToolbar($toolbar);
 
 					if (updatePosition) {
-            var newPosition = {x: e.pageX - 15, y: e.pageY - 100};
+            var newPosition = {x: e.pageX - 15, y: e.pageY - 70};
             changePosition(newPosition, $toolbar);
           }
+        },
+        
+        grabHtml = function(element) {
+          element.attr('contenteditable', false);
+          return $('<div>').append(element).html();
         },
 
 
@@ -187,8 +256,11 @@
           toolbar.find('[data-toggle=dropdown]').click(restoreSelection);
         },
 
-        options = $.extend({}, $.fn.vePersonality.defaults, userOptions);
-
+        options = $.extend({}, $.fn.veKnowledge.defaults, userOptions);
+        $editor.css(knowledgeStyles);
+        //  Used to output the relevant knowledge text. 
+        if(options.grabHtml) return grabHtml($editor);
+    
         styleWithCss(); // Set the styles to be done CSS.
         $editor.attr('contenteditable', true)
         .on('mouseup keyup mouseout', function (e) {
@@ -205,15 +277,44 @@
         }).data({atag: options.atag, ptag: options.ptag});
 
 
-
 		return this;
 	};
-	$.fn.vePersonality.defaults = {
+	$.fn.veKnowledge.defaults = {
 		toolbarSelector: '[data-role=editor-toolbar]',
 		atag: aDefaults,
 		ptag: pDefaults,
 		buttons: defaultButtons,
-
+    grabHtml: false,
 	};
-return {};
-}(this, window.jQuery, window._));
+  
+  // Set as the default and updated via the 
+  
+  
+  var $knowledgeArea = $('#knowledge_text');
+  $('#submitButton1').click(function(event) {
+    runKnowledgeEditor(event);
+    $('#fp-nav li:nth(2)').click(runKnowledgeEditor);
+  });
+  
+  $('#submitButton2').click( function() {
+    firstResponse = $knowledgeArea.veKnowledge({grabHtml: true});
+    console.log(firstResponse);
+    checkTheBox();
+  });
+  
+  function bgImgUrl(url){
+    return 'url(' + url + ')';
+  }
+  
+  function runKnowledgeEditor(event) {
+    $("#knowledge_parent").css({'background-image': bgImgUrl(bgURL), width: bgWidth, height: bgHeight});
+    $("#knowledge_child_cta").css({'background-image': bgImgUrl(ctaURL), width: ctaWidth, height: ctaHeight});
+    $("#knowledge_close").css({'background-image': bgImgUrl(closeURL), 'width': closeWidth, 'height': closeHeight });
+    
+    console.log($knowledgeArea);
+    $knowledgeArea.css({width: knowledgeEndW, height: knowledgeEndH, top: knowledgeEndT, left: knowledgeEndL});
+    $knowledgeArea.veKnowledge();
+    
+  }
+  
+});

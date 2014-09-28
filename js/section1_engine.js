@@ -1,5 +1,7 @@
 $(window).ready(function() {
     
+    
+    
     $('#submitButton1').click( checkTheBox );
     
     $("#draggable_parent").css('background-image', bgURL );
@@ -76,6 +78,8 @@ $(window).ready(function() {
     });
     $("#inpat").draggable({
         stop: function(event, ui) {
+            knowledgeEndT = ui.position.top;
+            knowledgeEndL = ui.position.left;
             console.log(ui.position.top, ui.position.left);
         }
     });
@@ -88,9 +92,9 @@ $(window).ready(function() {
     });
     $('#inpat').resizable({
     	stop : function(event,ui) {
-            endW = $(this).outerWidth();
-            endH = $(this).outerHeight();
-            console.log("Width: " + (endW) + "  --  Height: " + (endH));
+            knowledgeEndW = $(this).outerWidth();
+            knowledgeEndH = $(this).outerHeight();
+            console.log("Width: " + (knowledgeEndW) + "  --  Height: " + (knowledgeEndH));
         },
     });
 });
