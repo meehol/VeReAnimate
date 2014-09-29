@@ -3,6 +3,7 @@ $(window).ready(function() {
     
     
     $('#submitButton1').click( checkTheBox );
+    $('#submitButton1').click( runKnowledgeEditor );
     
     $("#draggable_parent").css('background-image', bgURL );
     $("#draggable_parent").css('width', bgWidth );
@@ -58,6 +59,8 @@ $(window).ready(function() {
     });
     $("#draggable_child_cta").draggable({
         stop: function(event, ui) {
+            ctaEndT = ui.position.top;
+            ctaEndL = ui.position.left;
             console.log(ui.position.top, ui.position.left);
         }
     });
@@ -68,6 +71,8 @@ $(window).ready(function() {
     });
     $("#draggable_child_close").draggable({
         stop: function(event, ui) {
+            closeEndT = ui.position.top;
+            closeEndL = ui.position.left;
             console.log(ui.position.top, ui.position.left);
         }
     });
