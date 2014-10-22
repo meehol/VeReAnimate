@@ -1,12 +1,26 @@
-/*
-    Document   : css/section2_styles．css
-    Created on : 2014-09-22 06:17 PM
-    Author     : meehol
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
-
-root {
-    display: block;
+#cage1 {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-top: 50px;
 }
+#knowledgeText0{
+    width: 380px;
+    height: 400px;
+}
+#knowledgeText1{
+    width: 380px;
+    height: 400px;
+}
+#container1{
+    float: right;
+    width: 43%;
+    height: 100%;
+    margin: 20px;
+    text-align: initial;
+}
+/* .jqte_editor{
+    resize: none;
+    margin-left:auto;
+    margin-right:20;
+} */

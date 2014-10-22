@@ -2,22 +2,23 @@
     display: inline-block;
     width: auto;
     height: auto;
-    border: dashed 2px;
-    margin-top: 5x;
-    padding: 10x;
+    margin-top: 50px;
 }
-
 #draggable_parent {
-        background-color: lightgreen !important;
+    background-color: transparent !important;
 }
-
-#draggable_child_cta,
-#draggable_child_close,{
+#draggable_child_cta, #draggable_child_close, #draggable_child_submit, {
     background: transparent;
 }
-
 #inpat {
     width: 238px;
-    height: 38px;
+    height: 70px;
     background-color: transparent;
+    position: absolute;
+}
+#feedbackInpat {
+    width: 138px;
+    height: 20px;
+    background-color: transparent;
+    position: absolute;
 }

@@ -1128,12 +1128,11 @@ stretchLeft
     transition-property: transform;
 
     overflow:hidden;
-}
-.spinItem:hover {
     -webkit-transform: rotate(360deg) scale(1.3) translateZ(0);
     -moz-transform: rotate(360deg) scale(1.3) translateZ(0);
     -o-transform: rotate(360deg) scale(1.3) translateZ(0);
 }
+
 .slideDown {
     animation-name: slideDown;
     -webkit-animation-name: slideDown;

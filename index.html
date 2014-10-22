@@ -3,43 +3,36 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>VeReAnimate v1.02</title>
-    <meta name="author" content="Michael F. Pakula, Ifiok Otung" />
+    <title>VeReAnimate v2.0</title>
+    <meta name="author" content="Michael F. Pakula" />
     <meta name="Resource-type" content="Document" />
 
-    <link rel="stylesheet" type="text/css" href="css/nav_bar.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/framework_styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/animations.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/animate.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.minicolors.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-te-1.4.0.css" />
 
+    <link rel="stylesheet" type="text/css" href="css/nav_bar.css" />
+    <link rel="stylesheet" type="text/css" href="css/framework_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/ve-animations.css" />    
 
-    <link rel="stylesheet" type="text/css" href="css/section0_styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/section1_styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/section2_styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/section3_styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/section4_styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/section0_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/section1_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/section2_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/section3_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/section4_styles.css" />
 
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-
-    <!--[if IE]>
-		<script type="text/javascript">
-			 var console = { log: function() {} };
-		</script>
-	<![endif]-->
-
-    <script type="text/javascript" src="js/variables.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-    <script src="libraries/jquery.hotkeys.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+    <!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script> -->
+    <script type="text/javascript" src="libraries/jquery.hotkeys.js" charset="utf-8"></script>
     <script type="text/javascript" src="libraries/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="libraries/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="js/framework_engine.js"></script>
-
+    <script type="text/javascript" src="libraries/jquery.minicolors.js"></script>
+    <script type="text/javascript" src="libraries/jquery-te-1.4.0.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -67,27 +60,27 @@
             <ul id="navigationMenu">
                 <li id="menu_0">
                     <div id="vechat" class="home" style="background-image: url(img/ct-icon.png)">
-                        <a class="menuLink" href="#" style="">Prompt</a>
-                        <a class="menuLink" href="#" style="top:40px">Feedback</a>
+                        <a id="vePrompt" class="menuLink" href="#" style="">Prompt</a>
+                        <a id="veFeedback" class="menuLink" href="#" style="top:40px">Feedback</a>
                     </div>
                 </li>
 
                 <li id="menu_1">
                     <div id="vecontact" class="about" style="background-image: url(img/cn-icon.png)">
-                        <a class="menuLink" href="#" style="">ProActive</a>
-                        <a class="menuLink" href="#" style="top:40px">E-mail template</a>
+                        <a id="veProactive" class="menuLink" href="#" style="">ProActive</a>
+                        <a class="emptyLink menuLink" href="#" style="top:40px">E-mail template</a>
                     </div>
                 </li>
 
                 <li id="menu_2">
                     <div id="vec" class="ProductName" style="background-image: url(img/at-icon.png)">
-                        <a class="menuLink" href="#" style="">VeAssist</a>
+                        <a class="emptyLink menuLink" href="#" style="">VeAssist</a>
                     </div>
                 </li>
 
                 <li id="menu_3">
                     <div id="ve" class="ProductName" style="background-image: url(img/ge-icon.png)">
-                        <a class="menuLink" href="#" style="">VeGenie</a>
+                        <a class="emptyLink menuLink" href="#" style="">VeGenie</a>
                     </div>
                 </li>
             </ul>
@@ -98,7 +91,6 @@
     <div id="start-screen" class="" style="position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; z-index:1001;">
 
         <img src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 50%; top:50%; margin-left:-130px; margin-top:-133px; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); "></img>
-        <!-- <img src="img/ve_startup.png" style="display:inline-block; float:left; width:100%;height:100%;"></img> -->
 
     </div>
 
@@ -122,23 +114,24 @@
 
                             <!-- PROMPT-->
 
-                            <div class="content">
+                            <div id="veTemplatePrompt" class="" style="display:inline-block;">
                                 <div class="center_block wrapPrompt">
                                     <div class="content">
                                         <div class="top_block dropZones">
                                             <div class="content" style="margin-top:5%;">
-                                                <div style="display: inline-block; width:20%;">
+                                                <p style="font-family: verdana;letter-spacing: 2px;font-weight: bold;font-size: 25px;font-style: initial;text-shadow: 2px 2px 8px #404040;color: #101010;">VeChat PROMPT</p>
+                                                <div style="display: inline-block; width:20%; padding-right:60px;">
                                                     <input class="buttonErase" type="button" id="eraseButton0" value="Erase" style="width:70px;height:50px;">
                                                 </div>
-                                                <div style="display: inline-block; width:20%;">
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
                                                     <label for="bgSlice0">Background</label>
                                                     <input class="modern" type="text" name="promptForm" id="bgSlice0" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
                                                 </div>
-                                                <div style="display: inline-block; width:20%;">
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
                                                     <label for="closeSlice0">Close button</label>
                                                     <input class="modern" type="text" name="promptForm" id="closeSlice0" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
                                                 </div>
-                                                <div style="display: inline-block; width:20%;">
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
                                                     <label for="ctaSlice0">CTA button</label>
                                                     <input class="modern" type="text" name="promptForm" id="ctaSlice0" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
                                                 </div>
@@ -166,6 +159,110 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- FEEDBACK -->
+
+                            <div id="veTemplateFeedback" class="" style="display:none;">
+                                <div class="center_block wrapFeedback">
+                                    <div class="content">
+                                        <div class="top_block dropZones">
+                                            <div class="content" style="margin-top:5%;">
+                                                <p style="font-family: verdana;letter-spacing: 2px;font-weight: bold;font-size: 25px;font-style: initial;text-shadow: 2px 2px 8px #404040;color: #101010;">VeChat FEEDBACK</p>
+                                                <div style="display: inline-block; width:15%; padding-right:60px;">
+                                                    <input class="buttonErase" type="button" id="eraseButton1" value="Erase" style="width:70px;height:50px;">
+                                                </div>
+                                                <div style="display: inline-block; width:15%; padding-right:40px;">
+                                                    <label for="bgSlice1">Background</label>
+                                                    <input class="modern" type="text" name="feedbackForm" id="bgSlice1" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                                <div style="display: inline-block; width:15%; padding-right:40px;">
+                                                    <label for="closeSlice1">Close button</label>
+                                                    <input class="modern" type="text" name="feedbackForm" id="closeSlice1" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                                <div style="display: inline-block; width:15%; padding-right:40px;">
+                                                    <label for="ctaSlice1">CTA button</label>
+                                                    <input class="modern" type="text" name="feedbackForm" id="ctaSlice1" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                                <div style="display: inline-block; width:15%; padding-right:40px;">
+                                                    <label for="submitSlice1">Submit button</label>
+                                                    <input class="modern" type="text" name="feedbackForm" id="submitSlice1" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_block previewZones">
+                                            <div class="content" style="margin-top:7%;display:flex;">
+                                                <div style="display: table-cell; width:20%;">
+                                                    <div for="bgSlice1Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">Background URL:</div>
+                                                    <div for="closeSlice1Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">Close button URL:</div>
+                                                    <div for="ctaSlice1Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">CTA button URL:</div>
+                                                    <div for="submitSlice1Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">Submit button URL:</div>
+                                                </div>
+                                                <div style="display: table-cell; width:60%;">
+                                                    <div id="bgSlice1Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="closeSlice1Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="ctaSlice1Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="submitSlice1Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                </div>
+                                                <div style="display: table-cell; width:20%; text-align:left;">
+                                                    <div id="bgSlice1sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                    <div id="closeSlice1sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                    <div id="ctaSlice1sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                    <div id="submitSlice1sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PROACTIVE-->
+
+                            <div id="veTemplateProactive" class="" style="display:none;">
+                                <div class="center_block wrapProactive">
+                                    <div class="content">
+                                        <div class="top_block dropZones">
+                                            <div class="content" style="margin-top:5%;">
+                                                <p style="font-family: verdana;letter-spacing: 2px;font-weight: bold;font-size: 25px;font-style: initial;text-shadow: 2px 2px 8px #404040;color: #101010;">VeContact PROACTIVE</p>
+                                                <div style="display: inline-block; width:20%; padding-right:60px;">
+                                                    <input class="buttonErase" type="button" id="eraseButton2" value="Erase" style="width:70px;height:50px;">
+                                                </div>
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
+                                                    <label for="bgSlice2">Background</label>
+                                                    <input class="modern" type="text" name="promptForm" id="bgSlice2" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
+                                                    <label for="closeSlice2">Close button</label>
+                                                    <input class="modern" type="text" name="promptForm" id="closeSlice2" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                                <div style="display: inline-block; width:20%; padding-right:40px;">
+                                                    <label for="ctaSlice2">CTA button</label>
+                                                    <input class="modern" type="text" name="promptForm" id="ctaSlice2" style="opacity: 1; color: green; width: 200px; height: 200px; background-color: white; font-family:verdana; border-radius:50%; box-shadow: inset 0px 0px 120px 0px rgba(255,255,255,0.8);" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity = '1'" ondragenter="this.style.opacity='0.7';" ondragleave="this.style.opacity='1.0';">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_block previewZones">
+                                            <div class="content" style="margin-top:7%;display:flex;">
+                                                <div style="display: table-cell; width:20%;">
+                                                    <div for="bgSlice2Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">Background URL:</div>
+                                                    <div for="closeSlice2Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">Close button URL:</div>
+                                                    <div for="ctaSlice2Preview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:right; font-family:verdana;">CTA button URL:</div>
+                                                </div>
+                                                <div style="display: table-cell; width:60%;">
+                                                    <div id="bgSlice2Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="closeSlice2Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                    <div id="ctaSlice2Preview" dir="rtl" style="width:100%; max-width:580px; overflow:hidden; text-align:right; height:25px; margin-left:115px; white-space: nowrap; font-size:11px; line-height:20px; pointer-events:none; font-family:verdana;"></div>
+                                                </div>
+                                                <div style="display: table-cell; width:20%; text-align:left;">
+                                                    <div id="bgSlice2sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                    <div id="closeSlice2sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                    <div id="ctaSlice2sizePreview" style="margin-left:5px; width:100%; height:25px; white-space: nowrap; font-size:12px; font-weight:bold;  line-height:20px; text-align:left; font-family:verdana;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -203,9 +300,11 @@
                                                 <div id="cage">
 
                                                     <div id="draggable_parent" class="slideDown" style="left: 0px; top: 0px; z-index: 99202; visibility: visible; background-color: white;">
-                                                        <div id="draggable_child_cta" style="border: dashed 1px; border-color: red;"></div>
-                                                        <div id="draggable_child_close" style="border: dashed 1px; border-color: red;"></div>
+                                                        <div id="draggable_child_cta" style="border: dashed 1px; border-color: red; position: absolute; box-sizing: border-box; -webkit-box-sizing: border-box; "></div>
+                                                        <div id="draggable_child_close" style="border: dashed 1px; border-color: red; box-sizing: border-box; -webkit-box-sizing: border-box; "></div>
+                                                        <div id="draggable_child_submit" style="border: dashed 1px; border-color: red; position: absolute; box-sizing: border-box; -webkit-box-sizing: border-box; "></div>
                                                         <div id="inpat" style="border: dashed 1px; border-color: red;"></div>
+                                                        <div id="feedbackInpat" style="position: absolute; border: dashed 1px; border-color: red;"></div>
                                                     </div>
 
                                                 </div>
@@ -248,16 +347,16 @@
                                         <div class="top_block dropZones">
                                             <div class="content">
 
-                                                <div id="cage">
-
-                                                    <div id="knowledge_parent" style="position: relative; z-index: 99202; visibility: visible; background-color: white;">
-                                                        <div id="knowledge_cta"></div>
-                                                        <div id="knowledge_close"></div>
-                                                        <div id="knowledge_text" style="border: 1px dashed red;"></div>
-                                                    </div>
-
+                                                <div id="cage1"></div>
+                                                
+                                                <div id="container1">
+                                                    <input id="colorpicker" style="width: 100px;height: 30px;left: 600px;top: 70px;font-size: 14px; margin-left: auto; margin-right: 320px; display: inherit;">
+                                                    <textarea id="knowledgeText0"></textarea>
+                                                    <input class="button" type="button" id="insertButton0" value="Insert" style="width:90px;height:40px;margin-left: auto; margin-right: 320px; display: inherit;">
+                                                    <textarea id="knowledgeText1"></textarea>
+                                                    <input class="button" type="button" id="insertButton1" value="Insert" style="width:90px;height:40px;margin-left: auto; margin-right: 320px; display: inherit;">
                                                 </div>
-
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -290,8 +389,63 @@
                     <div class="module_content" colspan="2">
 
                         <div class="section_content_0">
-                            <img src="img/ve_logo.png">
-                            <h1>Adding some sparkles!</h1>
+                            <div class="content">
+                                <div class="center_block wrapPrompt">
+                                    <div class="content">
+                                        <div class="top_block dropZones">
+                                            <div class="content">
+
+                                                <div id="cage2"></div>
+
+                                                <div id="entryAnimations">
+                                                    <p>entry animations:</p>
+                                                    <label for="mainEntryAnimation">main:</label>
+                                                    <select class="animateList" id="mainEntryAnimation"></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="ctaEntryAnimation">cta:</label>
+                                                    <select class="animateList" id="ctaEntryAnimation"></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="proactivectaEntryAnimation">proactive cta:</label>
+                                                    <select class="animateList" id="proactivectaEntryAnimation"></select>
+                                                </div>
+
+                                                <div id="loopAnimations">
+                                                    <p>loop animations:</p>
+                                                    <label for="mainLoopAnimation">main:</label>
+                                                    <select class="animateList" id="mainLoopAnimation"></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="ctaLoopAnimation">cta:</label>
+                                                    <select class="animateList" id="ctaLoopAnimation"></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="proactivectaLoopAnimation">proactive cta:</label>
+                                                    <select class="animateList" id="proactivectaLoopAnimation"></select>
+                                                </div>
+
+                                                <div id="hoverAnimations">
+                                                    <p>hover animations:</p>
+                                                    <label for="closeHoverAnimation">close:</label>
+                                                    <select class="animateList" id="closeHoverAnimation"></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="ctaHoverAnimation">cta:</label>
+                                                    <select class="animateList" id="ctaHoverAnimation" disabled></select>
+                                                    <br>
+                                                    <br>
+                                                    <label for="proactivectaHoverAnimation">proactive cta:</label>
+                                                    <select class="animateList" id="proactivectaHoverAnimation" disabled></select>
+                                                </div>
+
+                                                <input class="button" type="button" id="insertButton2" value="Insert & Preview" style="width:150px;height:50px;position: absolute;right: 260px;top: 670px;"></input>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -302,7 +456,7 @@
                         <input class="buttonPreviousModule" type="button" value="Back"></input>
                     </div>
                     <div class="module_bottom_right">
-                        <input class="buttonSaveModule" type="button" value="Save"></input>
+                        <input id="submitButton3" class="buttonSaveModule" type="button" value="Save"></input>
                     </div>
                 </div>
             </div>
@@ -319,8 +473,31 @@
                     <div class="module_content" colspan="2">
 
                         <div class="section_content_0">
-                            <img src="img/ve_logo.png">
-                            <h1>Here is the outcome of Your set up!</h1>
+
+                            <div class="content">
+                                <div class="center_block wrapPrompt">
+                                    <div class="content">
+                                        <div class="center_block dropZones">
+                                            <div class="content">
+
+                                                <div id="cage3">
+
+                                                    <textarea id="mainDivPreview" style="left: 150px;top: 80px;width: 620px;height: 740px;overflow: auto;margin: 0px;position: absolute;resize: none;"></textarea>
+                                                    <textarea id="firstMessagePreview" style="right: 150px;top: 80px;width: 440px;height: 180px;overflow: auto;margin: 0px;position: absolute;resize: none;"></textarea>
+                                                    <textarea id="responseMessagePreview" style="right: 150px;top: 280px;width: 440px;height: 180px;overflow: auto;margin: 0px;position: absolute;resize: none;"></textarea>
+                                                    <textarea id="customJSpreview" style="right: 150px;top: 500px;width: 440px;height: 150px;overflow: auto;margin: 0px;position: absolute;resize: none;border-style: dashed;"></textarea>
+                                                    <textarea id="settingsPreview" style="right: 150px;top: 670px;width: 440px;height: 150px;overflow: auto;margin: 0px;position: absolute;resize: none;border-style: dashed;"></textarea>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -330,7 +507,7 @@
                         <input class="buttonPreviousModule" type="button" value="Back"></input>
                     </div>
                     <div class="module_bottom_right">
-                        <input class="buttonSaveModule" type="button" value="Save to database" style="width:170px;" onclick="alert('Your design has been saved to [P:] drive!')"></input>
+                        <input id="submitButton4" class="buttonSaveModule" type="button" value="Start from scratch" style="width:170px;"></input>
                     </div>
                 </div>
             </div>
@@ -338,7 +515,7 @@
     </div>
 
     <script type="text/javascript" src="js/framework_actions.js"></script>
-
+    <script type="text/javascript" src="js/framework_engine.js"></script>
     <script type="text/javascript" src="js/section0_engine.js"></script>
     <script type="text/javascript" src="js/section1_engine.js"></script>
     <script type="text/javascript" src="js/section2_engine.js"></script>

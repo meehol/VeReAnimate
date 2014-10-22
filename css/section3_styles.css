@@ -1,12 +1,54 @@
-/*
-    Document   : css/section3_styles．css
-    Created on : 2014-09-22 06:18 PM
-    Author     : meehol
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
-
-root {
-    display: block;
+#cage2 {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+}
+#entryAnimations, #loopAnimations, #hoverAnimations {
+    width: 450px;
+    height: 150px;
+    border: #909090 1px dashed;
+    border-radius: 15px;
+    text-align: center;
+    font-family: verdana;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 10px;
+}
+#entryAnimations {
+    position: absolute;
+    right: 100px;
+    top: 70px;
+}
+#loopAnimations {
+    position: absolute;
+    right: 100px;
+    top: 270px;
+}
+#hoverAnimations {
+    position: absolute;
+    right: 100px;
+    top: 470px;
+}
+#entryAnimations p, #loopAnimations p, #hoverAnimations p {
+    padding: 0px;
+    margin: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#entryAnimations label, #loopAnimations label, #hoverAnimations label {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+.animateList {
+    border-radius: 5px;
+    width: 57%;
+    height: 25px;
+    font-size: 20px;
+    text-align: right;
+    float: right;
+    margin-right: 15px;
 }

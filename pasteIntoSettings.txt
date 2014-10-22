@@ -1,0 +1,25 @@
+animations: {
+
+"entry":{
+        "main":         "ve-rotatein",
+        "cta":          "ve-bounceinright",
+        "proactivecta": ""
+        },
+         
+"hover":{
+        "main":         "",
+        "cta":          "",
+        "proactivecta": "",
+        "close":        "ve-spinonhover",
+        "submit":       ""
+        },
+
+"loop": {
+        "main":         "ve-bounceloop",
+        "cta":          "ve-rubberbandloop",
+        "proactivecta": "",
+        "close":        "",
+        "submit":       ""
+        }
+        
+}
