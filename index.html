@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>VeReAnimate v2.0</title>
-    <meta name="author" content="Michael F. Pakula" />
+    <meta name="author" content="Michael F. Banaszczyk" />
     <meta name="Resource-type" content="Document" />
 
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
@@ -16,14 +16,15 @@
     <link rel="stylesheet" type="text/css" href="css/framework_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/animations.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/ve-animations.css" />    
+    <link rel="stylesheet" type="text/css" href="css/ve_animations.css" />
 
     <link rel="stylesheet" type="text/css" href="css/section0_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/section1_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/section2_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/section3_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/section4_styles.css" />
-
+    <link rel="stylesheet" type="text/css" href="css/vegenie.css" />
+    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
     <!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -33,6 +34,7 @@
     <script type="text/javascript" src="libraries/jquery.fullPage.js"></script>
     <script type="text/javascript" src="libraries/jquery.minicolors.js"></script>
     <script type="text/javascript" src="libraries/jquery-te-1.4.0.min.js"></script>
+    <script type="text/javascript" src="libraries/shortcut.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -46,7 +48,6 @@
             });
         });
     </script>
-
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 
                 <li id="menu_3">
                     <div id="ve" class="ProductName" style="background-image: url(img/ge-icon.png)">
-                        <a class="emptyLink menuLink" href="#" style="">VeGenie</a>
+                        <a id="veGenie" class="menuLink" href="#" style="">VeGenie</a>
                     </div>
                 </li>
             </ul>
@@ -90,7 +91,7 @@
 
     <div id="start-screen" class="" style="position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; z-index:1001;">
 
-        <img src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 50%; top:50%; margin-left:-130px; margin-top:-133px; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); "></img>
+        <img src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 50%; top:50%; margin-left:-130px; margin-top:-133px; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); ">
 
     </div>
 
@@ -100,7 +101,7 @@
 
 
 
-        <div class="section " id="section0">
+        <div class="section" id="section0">
 
             <div id="module_wrapper" cellspacing="2px">
 
@@ -111,10 +112,22 @@
                     <div class="module_content">
 
                         <div class="section_content_0">
+                            
+                            <!-- WELCOME-->
+
+                            <div id="veWelcomeIdle" class="" style="display:inline-block;">
+                                <div class="center_block wrapPrompt">
+                                    <div class="content">
+                                        
+                                        <img id="vewelcomelogo" src="img/ve_logo.png" class="flipInX" style="position:fixed;left: 50%; top:44%; margin-left:-130px; margin-top:-133px; background-color: rgba(255,255,255,0.8); border-radius:50%; box-shadow: 0px 0px 120px 0px rgba(255,255,255,0.8); ">
+                                        
+                                    </div>
+                                </div>
+                            </div>                             
 
                             <!-- PROMPT-->
 
-                            <div id="veTemplatePrompt" class="" style="display:inline-block;">
+                            <div id="veTemplatePrompt" class="" style="display:none;">
                                 <div class="center_block wrapPrompt">
                                     <div class="content">
                                         <div class="top_block dropZones">
@@ -262,7 +275,49 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- VeGenie-->
 
+                            <div id="veTemplateGenie" class="" style="display:none;">
+                                <div class="genie-left-block" style="height:100%; width:30%;padding-top: 15px;padding-left: 110px;">
+                                    <label for="veGenie_input_var1" style="font-weight:bold;">Flex ID</label>
+                                    <input id="veGenie_input_var1" type='text' class="veGenie_input_field required" placeholder="Numeric String XXXXXX...">
+                                    <label for="veGenie_input_var2" style="font-weight:bold;">Completion ID</label>
+                                    <input id="veGenie_input_var2" type='text' class="veGenie_input_field required" placeholder="Numeric String XXXXXX...">
+                                    <label for="veGenie_input_var3" style="font-weight:bold;">Order ID RAW selector</label>
+                                    <input id="veGenie_input_var3" type='text' class="veGenie_input_field required" placeholder="RAW jQuery selector...">
+                                    <label for="veGenie_input_var4" style="">Mask</label>
+                                    <input id="veGenie_input_var4" type='text' class="veGenie_input_field" placeholder="OPTIONAL">
+                                    <label for="veGenie_input_var5" style="font-weight:bold;">Total basket RAW selector</label>
+                                    <input id="veGenie_input_var5" type='text' class="veGenie_input_field required" placeholder="RAW jQuery selector...">
+                                    <label for="veGenie_input_var6" style="">Total basket page URL</label>
+                                    <input id="veGenie_input_var6" type='text' class="veGenie_input_field" placeholder="OPTIONAL">
+                                    <label for="veGenie_input_var7" style="font-weight:bold;">Comlete page URL</label>
+                                    <input id="veGenie_input_var7" type='text' class="veGenie_input_field required" placeholder="www.yourstore.com/order-complete">
+                                    <label for="veGenie_input_var8" style="">Complete page identifier</label>
+                                    <input id="veGenie_input_var8" type='text' class="veGenie_input_field" placeholder="OPTIONAL">
+                                </div>
+                                <div class="genie-center-block" style="height:100%; width:25%;margin-top:20%;">
+                                    <button id="vegenie_generate_button" class="vegenie_generate_button" style="">
+                                        Generate
+                                    </button>
+                                    <button id="vegenie_erase_button" class="vegenie_erase_button" style="">
+                                        Erase
+                                    </button>
+                                </div>
+                                <div class="genie-right-block" style="height:100%; width:25%;padding-top: 15px;">
+                                    <label for="veGenie_result1">Settings object:</label>
+                                    <textarea id="veGenie_result1" class="veGenie_textarea_result"></textarea>
+                                    <label for="veGenie_result2">Custom JS:</label>
+                                    <textarea id="veGenie_result2" class="veGenie_textarea_result"></textarea>
+                                </div>
+                          
+                            </div>
+                            
+                            
+                            
+                            
+                        
                         </div>
                     </div>
                 </div>
@@ -272,7 +327,7 @@
                         <input class="buttonPreviousModule" type="button" value="Back" style="visibility:hidden;"></input>
                     </div>
                     <div class="module_bottom_right">
-                        <input id="submitButton0" class="buttonSaveModule" type="button" value="Save"></input>
+                        <input id="submitButton0" style="visibility:hidden;" class="buttonSaveModule" type="button" value="Save"></input>
                     </div>
                 </div>
             </div>
@@ -348,7 +403,7 @@
                                             <div class="content">
 
                                                 <div id="cage1"></div>
-                                                
+
                                                 <div id="container1">
                                                     <input id="colorpicker" style="width: 100px;height: 30px;left: 600px;top: 70px;font-size: 14px; margin-left: auto; margin-right: 320px; display: inherit;">
                                                     <textarea id="knowledgeText0"></textarea>
@@ -356,7 +411,7 @@
                                                     <textarea id="knowledgeText1"></textarea>
                                                     <input class="button" type="button" id="insertButton1" value="Insert" style="width:90px;height:40px;margin-left: auto; margin-right: 320px; display: inherit;">
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -516,6 +571,7 @@
 
     <script type="text/javascript" src="js/framework_actions.js"></script>
     <script type="text/javascript" src="js/framework_engine.js"></script>
+    <script type="text/javascript" src="js/vegenie.js"></script>
     <script type="text/javascript" src="js/section0_engine.js"></script>
     <script type="text/javascript" src="js/section1_engine.js"></script>
     <script type="text/javascript" src="js/section2_engine.js"></script>

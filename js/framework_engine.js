@@ -2,7 +2,7 @@
         var veTemplate = 0;  --- VeChat Prompt
         var veTemplate = 1;  --- VeChat Feedback
         var veTemplate = 2;  --- VeContact Proactive
-        var veTemplate = 3;  --- VeContact E-mail template
+        var veTemplate = 3;  --- VeGenie
     */
 $(window).bind('beforeunload', function() {
     return 'Reload?';
@@ -66,7 +66,7 @@ function finalizePrompt() {
     $('#cage2 #WindowCloseBtn').removeClass();
     $('#cage2 #VeChatCTA').removeClass();
     
-    savedTemplate0 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
+    var savedTemplate0 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
     $('#mainDivPreview').text(savedTemplate0);
     var x1 = $('#knowledgeText0').val();
     $('#firstMessagePreview').text(x1);
@@ -81,8 +81,8 @@ function finalizeFeedback() {
     $('#cage2 #WindowCloseBtn').removeClass();
     $('#cage2 #VeChatCTA').removeClass();
     
-    savedTemplate0 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
-    $('#mainDivPreview').text(savedTemplate0);
+    var savedTemplate1 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
+    $('#mainDivPreview').text(savedTemplate1);
     var x1 = $('#knowledgeText0').val();
     $('#firstMessagePreview').text(x1);
     var x2 = $('#knowledgeText1').val();
@@ -97,8 +97,8 @@ function finalizeProactive() {
     $('#cage2 #WindowCloseBtn').removeClass();
     $('#cage2 #veProactiveButton').removeClass();
     
-    savedTemplate0 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
-    $('#mainDivPreview').text(savedTemplate0);
+    var savedTemplate2 = $('<div/>').append($('#cage2 > #ChatMainDiv').clone()).html();
+    $('#mainDivPreview').text(savedTemplate2);
     var x1 = $('#knowledgeText0').val();
     $('#firstMessagePreview').text('');
     var x2 = $('#knowledgeText1').val();

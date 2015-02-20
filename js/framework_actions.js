@@ -10,6 +10,8 @@ $(window).ready(function() {
                 }, 1100);
             }, 700);
         }, 1500);
+        $('#vewelcomelogo').draggable({ containment: $('div.module_content') });
+        $('#fp-nav').css('visibility', 'hidden');
     });
     $('#menu_bar').bind('mouseenter mouseleave', function() {
         $('#menu_icon').toggleClass('spinItem');
@@ -51,20 +53,34 @@ $(window).ready(function() {
         if(($('#ctaSlice0sizePreview').text() !== '') || ($('#ctaSlice1sizePreview').text() !== '') || ($('#ctaSlice2sizePreview').text() !== '')) {
             location.reload();
             veTemplate = 0;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'none');
             $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'inline-block');
             document.getElementById('veTemplatePrompt').className = 'animated rollIn';
         } else if(($('#ctaSlice0sizePreview').text() === '') && ($('#ctaSlice1sizePreview').text() === '') && ($('#ctaSlice2sizePreview').text() === '')) {
             veTemplate = 0;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'none');
             $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'inline-block');
             document.getElementById('veTemplatePrompt').className = 'animated rollIn';
         }
@@ -73,20 +89,34 @@ $(window).ready(function() {
         if(($('#ctaSlice0sizePreview').text() !== '') || ($('#ctaSlice1sizePreview').text() !== '') || ($('#ctaSlice2sizePreview').text() !== '')) {
             location.reload();
             veTemplate = 1;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'none');
             $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'inline-block');
             document.getElementById('veTemplateFeedback').className = 'animated rollIn';
         } else if(($('#ctaSlice0sizePreview').text() === '') && ($('#ctaSlice1sizePreview').text() === '') && ($('#ctaSlice2sizePreview').text() === '')) {
             veTemplate = 1;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'none');
             $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'inline-block');
             document.getElementById('veTemplateFeedback').className = 'animated rollIn';
         }
@@ -95,22 +125,72 @@ $(window).ready(function() {
         if(($('#ctaSlice0sizePreview').text() !== '') || ($('#ctaSlice1sizePreview').text() !== '') || ($('#ctaSlice2sizePreview').text() !== '')) {
             location.reload();
             veTemplate = 2;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplateProactive').css('display', 'inline-block');
             document.getElementById('veTemplateProactive').className = 'animated rollIn';
         } else if(($('#ctaSlice0sizePreview').text() === '') && ($('#ctaSlice1sizePreview').text() === '') && ($('#ctaSlice2sizePreview').text() === '')) {
             veTemplate = 2;
+                        
+            $('#submitButton0').css('visibility', 'visible');
+            $('#fp-nav').css('visibility', 'visible');
+            
             $("#eraseButton0").click();
             $("#eraseButton1").click();
             $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
             $('#veTemplateFeedback').css('display', 'none');
             $('#veTemplatePrompt').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'none');
             $('#veTemplateProactive').css('display', 'inline-block');
             document.getElementById('veTemplateProactive').className = 'animated rollIn';
+        }
+    });
+    $('#veGenie').bind('click', function(e) {
+        if(($('#ctaSlice0sizePreview').text() !== '') || ($('#ctaSlice1sizePreview').text() !== '') || ($('#ctaSlice2sizePreview').text() !== '')) {
+            location.reload();
+            veTemplate = 3;
+            
+            $('#submitButton0').css('visibility', 'hidden');
+            $('#fp-nav').css('visibility', 'hidden');
+            
+            $("#eraseButton0").click();
+            $("#eraseButton1").click();
+            $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
+            $('#veTemplateFeedback').css('display', 'none');
+            $('#veTemplatePrompt').css('display', 'none');
+            $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'flex');
+            document.getElementById('veTemplateGenie').className = 'animated rollIn';
+        } else if(($('#ctaSlice0sizePreview').text() === '') && ($('#ctaSlice1sizePreview').text() === '') && ($('#ctaSlice2sizePreview').text() === '')) {
+            veTemplate = 3;
+                        
+            $('#submitButton0').css('visibility', 'hidden');
+            $('#fp-nav').css('visibility', 'hidden');
+            
+            $("#eraseButton0").click();
+            $("#eraseButton1").click();
+            $("#eraseButton2").click();
+            $("#eraseButton3").click();
+            $('#veWelcomeIdle').css('display', 'none');
+            $('#veTemplateFeedback').css('display', 'none');
+            $('#veTemplatePrompt').css('display', 'none');
+            $('#veTemplateProactive').css('display', 'none');
+            $('#veTemplateGenie').css('display', 'flex');
+            document.getElementById('veTemplateGenie').className = 'animated rollIn';
         }
     });
     $('.buttonPreviousModule').bind('click', function() {

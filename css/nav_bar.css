@@ -34,8 +34,9 @@
     -moz-box-shadow:0 0 5px #9ddff5;
     -webkit-box-shadow:0 0 5px #9ddff5;
     box-shadow:0 0 5px #9ddff5;
-    background-color: limegreen;
+    background-color: #e5e5e5;
     opacity: 0.7;
+    text-decoration:none;
     visibility: hidden;
 }
 #navigationMenu a:hover {
